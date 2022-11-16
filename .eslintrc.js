@@ -12,5 +12,6 @@ module.exports = {
   rules: {},
   globals: {
     __dirname: 'readonly',
+    process: 'readonly',
   },
 };
