@@ -1,9 +1,17 @@
+const AppError = require('./../utils/appError');
+
 module.exports = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
 
   if (process.env.NODE_ENV === 'development') sendErrDev(err, res);
-  if (process.env.NODE_ENV === 'production') sendErrProd(err, res);
+  if (process.env.NODE_ENV === 'production') {
+    let myErr = { ...err };
+    myErr.message = err.message;
+    if (myErr.kind === 'ObjectId') myErr = handleCastErrDB(myErr);
+
+    sendErrProd(myErr, res);
+  }
 };
 
 function sendErrDev(err, res) {
@@ -28,4 +36,9 @@ function sendErrProd(err, res) {
       message: 'Something went very wrong!',
     });
   }
+}
+
+function handleCastErrDB(err) {
+  const message = `Invalid ${err.path}: ${err.value}.`;
+  return new AppError(message, 400);
 }
