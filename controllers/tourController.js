@@ -1,5 +1,5 @@
-const Tour = require('../models/tourModel');
-const APIFeatures = require('../utils/apiFeatures');
+const Tour = require('./../models/tourModel');
+const APIFeatures = require('./../utils/apiFeatures');
 
 exports.aliasTopCheap = (req, res, next) => {
   req.query.limit = 5;
