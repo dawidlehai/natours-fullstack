@@ -9,7 +9,6 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
   },
-  rules: {},
   globals: {
     __dirname: 'readonly',
     process: 'readonly',
