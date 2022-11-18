@@ -9,6 +9,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
   },
+  rules: {
+    no-unused-vars: ['error', { varsIgnorePattern: 'next' }],
+  },
   globals: {
     __dirname: 'readonly',
     process: 'readonly',
