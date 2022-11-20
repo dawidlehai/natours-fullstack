@@ -27,8 +27,6 @@ const createSendToken = (user, statusCode, res) => {
 
   // Prevent leaking sensitive data.
   user.password = undefined;
-  user.passwordChangedAt = undefined;
-  user.__v = undefined;
 
   res.status(statusCode).json({
     status: 'success',
