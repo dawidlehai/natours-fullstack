@@ -33,6 +33,8 @@ const reviewSchema = new mongoose.Schema(
   }
 );
 
+reviewSchema.index({ tour: 1, user: 1 }, { unique: true }); // Preventing users from writting multiple reviews for a given tour
+
 reviewSchema.pre(/^find/, function (next) {
   this.populate({
     path: 'user',
