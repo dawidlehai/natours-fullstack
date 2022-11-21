@@ -75,7 +75,7 @@ userSchema.pre(/^find/, function (next) {
   next();
 });
 
-// INSTANCE FUNCTIONS
+// INSTANCE METHODS
 
 userSchema.methods.correctPassword = async (candidatePassword, userPassword) =>
   await bcrypt.compare(candidatePassword, userPassword);
