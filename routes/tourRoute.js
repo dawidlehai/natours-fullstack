@@ -12,6 +12,10 @@ router
   .get(tourController.aliasTopCheap, tourController.getAllTours);
 
 router
+  .route('/within/:distance/center/:latlng/unit/:unit')
+  .get(tourController.getToursWithin);
+
+router
   .route('/')
   .get(tourController.getAllTours)
   .post(
