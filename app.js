@@ -42,6 +42,9 @@ app.use('/api', limiter);
 // Body parser
 app.use(express.json());
 
+// Cookie parser
+app.use(cookieParser());
+
 // Data sanitization against NoSQL query injection
 app.use(mongoSanitize());
 
