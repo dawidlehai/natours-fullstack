@@ -26,7 +26,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set security HTTP headers
-app.use(helmet());
+// This needs in depth configuration. As for now it prevents from using JS modules...
+// app.use(helmet());
 
 // Development logging
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
