@@ -1,6 +1,6 @@
 /* eslint-disable */
-import { login, logout } from './login';
-import { updateSettings } from './updateSettings';
+import { login, logout } from './login.js';
+import { updateSettings } from './updateSettings.js';
 
 // DOM ELEMENTS
 const loginForm = document.querySelector('.form--login');
