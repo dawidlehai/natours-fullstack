@@ -2,7 +2,7 @@
 
 **Web application for a fictional company that offers tours in nature.**
 
-## 💻 Screenshots
+## 💻 Screenshot
 <img src="natours-fullstack-screenshot.webp" alt="Screenshot of the Natours website" width="480px">
 
 ## 🛠️ Tools and technologies
